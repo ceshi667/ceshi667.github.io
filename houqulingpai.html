@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OneDrive OAuth2 Example</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>OneDrive OAuth2 Example</h1>
+  <button onclick="authorize()">Authorize OneDrive</button>
+  <script>
+    // OneDrive OAuth2 Configuration
+    const CLIENT_ID = 'c294336d-e0ba-4132-8263-1c78913eca3a';
+    const REDIRECT_URI = 'https://localhost';
+    const SCOPES = 'files.readwrite.all';
+
+    // OneDrive OAuth2 Authorization URL
+    const AUTH_URL = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=${SCOPES}`;
+
+    // Function to authorize OneDrive
+    function authorize() {
+      window.location.href = AUTH_URL;
+    }
+  </script>
+</body>
+</html>
